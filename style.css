@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+}
+
+span.switcher {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+span.switcher input {
+  appearance: none;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: black;
+  border: 2px solid orange;
+  outline: none;
+  margin: 0;
+}
+
+span.switcher input:before,
+span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+span.switcher input:before {
+  content: "DAY";
+  left: 35px;
+}
+
+span.switcher input:after {
+  content: "NIGHT";
+  right: 25px;
+}
+
+span.switcher.switcher-1 input {
+  transition: 0.25s -0.1s;
+}
+
+span.switcher.switcher-1 input:checked:before {
+  color: white;
+  transition: color 0.5s 0.2s;
+}
+
+span.switcher.switcher-1 input:not(:checked):before {
+  color: #666;
+  transition: color 0.5s;
+}
+
+span.switcher.switcher-1 input:checked:after {
+  color: #666;
+  transition: color 0.5s;
+}
+
+span.switcher.switcher-1 input:not(:checked):after {
+  color: white;
+  transition: color 0.5s 0.2s;
+}
+
+span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  height: 50px;
+  border-radius: 25px;
+  background-color: orange;
+}
+
+span.switcher.switcher-1 input:checked + label {
+  left: 0;
+  right: 100px;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+
+span.switcher.switcher-1 input:not(:checked){
+  border: 2px solid lightseagreen;
+}
+
+span.switcher.switcher-1 input:not(:checked) + label {
+  left: 100px;
+  right: 0;
+  background-color: lightseagreen;
+  transition: left 0.4s 0.2s, right 0.5s;
+}
