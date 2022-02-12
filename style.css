@@ -94,3 +94,17 @@ span.switcher.switcher-1 input:not(:checked) + label {
   background-color: lightseagreen;
   transition: left 0.4s 0.2s, right 0.5s;
 }
+
+.text{
+  text-align: center;
+  margin: 40px 0;
+  color:white
+}
+
+span.switcher.switcher-1 input:checked ~ div.night{
+  display: none;
+}
+
+span.switcher.switcher-1 input:not(:checked) ~ div.day{
+  display: none;
+}
