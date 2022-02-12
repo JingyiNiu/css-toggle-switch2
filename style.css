@@ -4,7 +4,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: black;
 }
 
 span.switcher {
@@ -47,6 +46,10 @@ span.switcher input:after {
 
 span.switcher.switcher-1 input {
   transition: 0.25s -0.1s;
+}
+
+span.switcher.switcher-1 input:checked{
+  background-color: #eee;
 }
 
 span.switcher.switcher-1 input:checked:before {
@@ -99,6 +102,10 @@ span.switcher.switcher-1 input:not(:checked) + label {
   text-align: center;
   margin: 40px 0;
   color:white
+}
+
+.day{
+  color:#000
 }
 
 span.switcher.switcher-1 input:checked ~ div.night{

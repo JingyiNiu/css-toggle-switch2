@@ -9,13 +9,23 @@
   </head>
   <body>
     <span class="switcher switcher-1">
-      <input type="checkbox" id="switcher-1" />
+      <input type="checkbox" id="switcher-1" onclick="changeBgc()"/>
       <label for="switcher-1"></label>
       <div class="text day">day</div>
       <div class="text night">night</div>
     </span>
   </body>
   <script>
-    
+    const changeBgc = () => {
+      const checkbox = document.querySelector("#switcher-1");
+      if (checkbox.checked==true) {
+        document.body.style.background = "#eee";
+        console.log("checked");
+      }
+      else{
+        document.body.style.background = "#000";
+        console.log("nope")
+      }
+    };
   </script>
 </html>
